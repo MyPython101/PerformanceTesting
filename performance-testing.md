@@ -1,8 +1,5 @@
 
 
-### c. Uneven distribution of resource usage
-Pareto-type distribution is also known as very uneven distribution of resource usage.
-
 
 ## C. Advantages/Disadvantage
 ### Advantage:
