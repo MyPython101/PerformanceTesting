@@ -35,6 +35,13 @@ Pareto-type distribution is also known as very uneven distribution of resource u
 is claimed distribution of project-affecting issues (Pareto-type distribution). According to [1], it was found that 70 percent of the most severe class of problems 
 resided in the weakest 30 percent of the project.
 
+## Previous Work:
+
+According to [1], The author doesn't find an adequate of performance testing knowledge on the Internet. He found out that "there is neither an
+existing body of research literature nor an extensive collection of practical or experiential information available
+to help testers faced with the prospect of doing software performance testing".
+
+
 ## Locust IO
 ### Introduction:
 
