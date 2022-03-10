@@ -82,11 +82,13 @@ nature of the cloud introduces extra complexity
 
 ### Gather Requirement:
 Application was design using Flask Framework, and Jinja Template (Python). 
-Application was original designed by Dr. Angela Yu and implemented by Truc Huynh. 
-Application is a blog that required user register to edit or comment on a post. 
-Only the admin can create , edit or delete post. Application was host at heroku.com, and the hyper-link is "https://template-blog.herokuapp.com/".
 
-The was designed as a template blog and post on GitHub by Truc Huynh ()
+Blog-Template was original designed by Dr. Angela Yu and implemented by Truc Huynh. 
+Application is a blog that required user register to edit or comment on a post. 
+Only the admin can create , edit or delete post. Application was host at heroku.com, and the hyperlink is "https://template-blog.herokuapp.com/".
+
+The Blog-Template was designed as a template blog and post on GitHub by Truc Huynh ("https://github.com/jackyhuynh/blog-template").
+Anyone can use the blog for any purpose. 
 
 ### Test Plan Design:
 
