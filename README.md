@@ -5,9 +5,9 @@ locustio to perform performance testing on a blog website is presented
 
 **Index Terms** - Software performance testing, performance testing, software testing.
 
-## 1. Introduction
+## 1. Introduction:
 
-### a. Performance Testing Definition
+### a. Performance Testing Definition:
 
 Performance testing is a testing technique, performed to determine the responsiveness and stability of 
 a software system under various workload.
@@ -15,7 +15,7 @@ Performance testing metrics are scalability, reliability, resource usage.
 There are four primary type of performance testing: Load Testing, Stress Testing, Soak Testing, and Spike Testing. 
 Performance testing is a non-functional testing [3].
 
-### b. System Performance Degradation
+### b. System Performance Degradation:
 
 According to [1], system performance degradation or problems handling required system
 throughput is an extremely significant issue for many large industrial projects. Although the software system has gone through
@@ -29,28 +29,74 @@ is the major issues when the software deploy to the field [1].
 
 Major issues are issues that will impact on user satisfaction.
 
-### c. Uneven Distribution of Resource Usage
+### c. Uneven Distribution of Resource Usage:
 
 Pareto-type distribution is also known as very uneven distribution of resource usage. The main reason for system performance degradation
 is claimed distribution of project-affecting issues (Pareto-type distribution). According to [1], it was found that 70 percent of the most severe class of problems 
 resided in the weakest 30 percent of the project.
 
-## Previous Work:
+## 2. Previous Work:
 
-According to [1], The author doesn't find an adequate of performance testing knowledge on the Internet. He found out that "there is neither an
+According to [1], The author doesn't find any adequate of performance testing knowledge on the Internet. He found out that "there is neither an
 existing body of research literature nor an extensive collection of practical or experiential information available
 to help testers faced with the prospect of doing software performance testing".
 
+## 3. Performance Testing Tools:
+### Locust IO:
 
-## Locust IO
-### Introduction:
+Locust is an easy to use, scriptable and scalable performance testing tool. 
+Instead of being constrained by a UI or domain specific language, Locust infinitely expandable and very developer friendly due to its code base tools.
+Locust IO is required Python programming knowledge, and it is easy to use and develop test case.
 
-Locust is a scriptable and scalable performance testing tool, 
+**Write user test scenarios in Python code:**
+If tester want the users to loop, perform some conditional behaviour or do some calculations. Locust runs every user inside its own greenlet (a lightweight process/coroutine)
+which enables tester to write your tests like normal Python code (instead of using callbacks or other methods).
+Tester can use any Python IDE, and version control tester's test script as regular code (as opposed to some other tools that use XML or binary formats)
+
+**Distributed & Scalable - supports hundreds of thousands of users:**
+Locust makes it easy to run load tests distributed over multiple machines. It is event-based which makes it possible for a single process to handle many thousands concurrent users.
+
+**Locust Features:**
+Running in Docker, distributed load generation, running test in a debugger, running Locust distributed with Terraform/AWS, running Locus automation
+, retrieved test statistics in CSV format, testing non-HTTP systems, testing request base SDKs, increase performance with a faster HTTP client, event hooks,
+logging, using locust as a library.
+
+### Expertus:
+
+Retrieved from [4], Expertus is designed to automate large scale distributed experiment studies in IaaS clouds with the goal of addressing three challenges:
+
+**Experiment challenges:**
+Performance testing for enterprise applications consists of multiple closely related scenarios by
+varying a few configurable (preferably one) parameters at a time. 
+
+**Application challenges:**
+In distributed software testing the applications should start efficiently and in a provably correct order by simultaneously 
+enforcing serialization constraints and leveraging the distributed system’s inherent parallelism.
+
+**Cloud challenges:**
+Selecting the most appropriate cloud from many cloud offerings is a non-trivial task. Also, migrating an application between
+two clouds is a complex, time-consuming and error-prone task. Finally, communication, coordination, synchronization, monitoring and complete management challenges; lastly, the dynamic
+nature of the cloud introduces extra complexity
+
+## Testing website (blog) using Locust IO:
+
+### Gather Requirement:
+Application was design using Flask Framework, and Jinja Template (Python). 
+Application was original designed by Dr. Angela Yu and implemented by Truc Huynh. 
+Application is a blog that required user register to edit or comment on a post. 
+Only the admin can create , edit or delete post. Application was host at heroku.com, and the hyper-link is "https://template-blog.herokuapp.com/".
+
+The was designed as a template blog and post on GitHub by Truc Huynh ()
+
+### Test Plan Design:
+
+<img src="images/test-suite.PNG">
 
 
 
 
 
+### 
 ```bash
 2022-03-10T17:00:41Z
 [2022-03-10 12:00:41,483] DESKTOP-J4K30PB/INFO/locust.main: Shutting down (exit code 1)
@@ -103,7 +149,12 @@ We can guarantee the software applications can handle and manage the workload ef
 
 E. J. Weyuker and F. I. Vokolos, "Experience with performance testing of software systems: issues, an approach, and case study," in IEEE Transactions on Software Engineering, vol. 26, no. 12, pp. 1147-1156, Dec. 2000, doi: 10.1109/32.888628. [1]
 
-Kumar., K. Write your first performance/load test in Python., Retrieved from https://medium.com/@kundan3034/write-your-first-performance-load-test-in-python-e8e2132ef775 [2]
+D. Jayasinghe et al., "Expertus: A Generator Approach to Automate Performance Testing in IaaS Clouds," 2012 IEEE Fifth International Conference on Cloud Computing, 2012, pp. 115-122, doi: 10.1109/CLOUD.2012.98. [4]
+
+Kumar. K., "Write your first performance/load test in Python.", Retrieved from https://medium.com/@kundan3034/write-your-first-performance-load-test-in-python-e8e2132ef775 [2]
 
 Tutorial Points (n.d.), "Performance Testing", Retrieved from https://www.tutorialspoint.com/software_testing_dictionary/performance_testing.htm [3]
  
+Bystron. C.,  Heyman. J., Hamren J., Heyman. H. and Holmberg. L., Locust, Retrieved from https://github.com/locustio/locust [5]
+
+Retrieved from http://docs.locust.io/en/stable/running-without-web-ui.html#
