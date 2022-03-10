@@ -5,15 +5,18 @@ locustio to perform performance testing on a blog website is presented
 
 **Index Terms** - Software performance testing, performance testing, software testing.
 
-## 1. Introduction:
-### a. Performance Testing Definition 
+## 1. Introduction
+
+### a. Performance Testing Definition
+
 Performance testing is a testing technique, performed to determine the responsiveness and stability of 
 a software system under various workload.
 Performance testing metrics are scalability, reliability, resource usage. 
 There are four primary type of performance testing: Load Testing, Stress Testing, Soak Testing, and Spike Testing. 
 Performance testing is a non-functional testing [3].
 
-### b. System Performance Degradation:
+### b. System Performance Degradation
+
 According to [1], system performance degradation or problems handling required system
 throughput is an extremely significant issue for many large industrial projects. Although the software system has gone through
 extensive functionality testing, it was never really tested to assess its expected performance [1].
@@ -25,6 +28,12 @@ or the lack of a performance budget". They also claimed that insufficient planni
 is the major issues when the software deploy to the field [1].
 
 Major issues are issues that will impact on user satisfaction.
+
+### c. Uneven Distribution of Resource Usage
+
+Pareto-type distribution is also known as very uneven distribution of resource usage.
+
+
 
 ```bash
 2022-03-10T17:00:41Z
