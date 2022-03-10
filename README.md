@@ -81,14 +81,140 @@ nature of the cloud introduces extra complexity
 ## Testing website (blog) using Locust IO:
 
 ### Gather Requirement:
-Application was design using Flask Framework, and Jinja Template (Python). 
+Application name is Blog-Template, and it was designed using Flask Framework, and Jinja Template (Python). It's also using PostgreSQl for database.
+This is a fully functional, and extendable. Code review was conduct by Truc Huynh. Technology that implement in the code: 
+Flask framework, Jinja template, Object-Oriented Programming, SQL Alchemy, Password Hashing (werkzeug.security), Bootstrap, CK Editor (user input)
 
 Blog-Template was original designed by Dr. Angela Yu and implemented by Truc Huynh. 
 Application is a blog that required user register to edit or comment on a post. 
 Only the admin can create , edit or delete post. Application was host at heroku.com, and the hyperlink is "https://template-blog.herokuapp.com/".
 
 The Blog-Template was designed as a template blog and post on GitHub by Truc Huynh ("https://github.com/jackyhuynh/blog-template").
-Anyone can use the blog for any purpose. 
+Anyone can use the blog for any purpose. The first user will be automatically set as the admin (CRUD operations)
+
+### Structure of Backend:
+**main.py**
+```python
+from flask import Flask, render_template, redirect, url_for, flash, abort
+from flask_bootstrap import Bootstrap
+from flask_ckeditor import CKEditor
+from datetime import date
+from functools import wraps
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.orm import relationship
+from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
+from forms import LoginForm, RegisterForm, CreatePostForm, CommentForm
+from flask_gravatar import Gravatar
+import os
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
+ckeditor = CKEditor(app)
+Bootstrap(app)
+gravatar = Gravatar(app, size=100, rating='g', default='retro', force_default=False, force_lower=False, use_ssl=False, base_url=None)
+
+##CONNECT TO DB
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL", "sqlite:///blog.db")
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
+login_manager = LoginManager()
+login_manager.init_app(app)
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
+
+##CONFIGURE TABLE
+class User(UserMixin, db.Model):
+    __tablename__ = "users"
+    # Create a User
+
+class BlogPost(db.Model):
+    __tablename__ = "blog_posts"
+    # Create a BlogPost
+
+
+class Comment(db.Model):
+    __tablename__ = "comments"
+    # Create a comment
+db.create_all()
+
+
+def admin_only(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if current_user.id != 1:
+            return abort(403)
+        return f(*args, **kwargs)
+    return decorated_function
+
+
+@app.route('/')
+def get_all_posts():
+    posts = BlogPost.query.all()
+    return render_template("index.html", all_posts=posts, current_user=current_user)
+
+
+@app.route('/register', methods=["GET", "POST"])
+def register():
+    form = RegisterForm()
+    # ... Code to Register ...
+
+
+@app.route('/login', methods=["GET", "POST"])
+def login():
+    form = LoginForm()
+    # ... Code to Login ...
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    # ... Code to Logout ... 
+
+
+@app.route("/post/<int:post_id>", methods=["GET", "POST"])
+def show_post(post_id):
+    form = CommentForm()
+    # ... Code to show post ...
+
+
+@app.route("/about")
+def about():
+    return render_template("about.html", current_user=current_user)
+
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html", current_user=current_user)
+
+
+@app.route("/new-post", methods=["GET", "POST"])
+@admin_only
+def add_new_post():
+    form = CreatePostForm()
+    # ... Code to add new post ...
+
+
+@app.route("/edit-post/<int:post_id>", methods=["GET", "POST"])
+@admin_only
+def edit_post(post_id):
+    post = BlogPost.query.get(post_id)
+    # ... Code to edit post ...
+
+@app.route("/delete/<int:post_id>")
+@admin_only
+def delete_post(post_id):
+    post_to_delete = BlogPost.query.get(post_id)
+    # ... Code to delete post ...
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
 
 ### Test Plan Design:
 
