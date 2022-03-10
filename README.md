@@ -1,3 +1,31 @@
+# Performance Testing
+
+**Abstract** - An Introduction to Performance Testing. An approach to performance testing is discussed. A case study using 
+locustio to perform performance testing on a blog website is presented
+
+**Index Terms** - Software performance testing, performance testing, software testing.
+
+## 1. Introduction:
+### a. Performance Testing Definition 
+Performance testing is a testing technique, performed to determine the responsiveness and stability of 
+a software system under various workload.
+Performance testing metrics are scalability, reliability, resource usage. 
+There are four primary type of performance testing: Load Testing, Stress Testing, Soak Testing, and Spike Testing. 
+Performance testing is a non-functional testing [3].
+
+### b. System Performance Degradation:
+According to [1], system performance degradation or problems handling required system
+throughput is an extremely significant issue for many large industrial projects. Although the software system has gone through
+extensive functionality testing, it was never really tested to assess its expected performance [1].
+
+During an architecture review at AT&T, a group of engineer have found that "performance issues
+account for one of the three major fault categories. Performance problems identified might include
+such things as the lack of performance estimates, the failure to have proposed plans for data collection, 
+or the lack of a performance budget". They also claimed that insufficient planning for performance issues
+is the major issues when the software deploy to the field [1].
+
+Major issues are issues that will impact on user satisfaction.
+
 ```bash
 2022-03-10T17:00:41Z
 [2022-03-10 12:00:41,483] DESKTOP-J4K30PB/INFO/locust.main: Shutting down (exit code 1)
