@@ -1,4 +1,4 @@
-# Performance Testing
+# Performance Testing roles in Software Testing, Approach, Use Case, and Automated Performance Testing
 
 **Abstract** - An Introduction to Performance Testing. An approach to performance testing is discussed. A case study using 
 locustio to perform performance testing on a blog website is presented
@@ -310,11 +310,13 @@ Schedule script(schedule-script.py) can be used to scan and detect change in cod
 
 ### e. Result
 
-Result for the first test case 1000 user at 1.00 spawn rate. This is printed within my IDE (Py Charm). The result return with 0% fail rate. 
-Testers can download the PDF, CVS version for data analysis
+Result for the first test case 1000 user at 1.00 spawn rate. The result return with 0% fail rate. 
+Testers can download the PDF, CVS version for data analysis. Web UI can also be use for monitoring with real time monitoring and interactive chart.
 
-In my latest run, Template-Blog was able to handle 20,000 users at 0.5 spawn rate.
+In my latest test, Template-Blog was able to handle 20,000 users at 0.5 spawn rate.
 
+**Test Result**
+This is printed within my IDE (Py Charm).
 ```bash
 2022-03-10T17:00:41Z
 [2022-03-10 12:00:41,483] DESKTOP-J4K30PB/INFO/locust.main: Shutting down (exit code 1)
@@ -347,7 +349,17 @@ Response time percentiles (approximated)
  None     Aggregated                                                                            150    170    170    170    180    180    190    190    190    190    190     29
 ```
 
-****
+**Number of User Chart**
+This is the WEB UI chart (1000 user at 1.00 spawn rate)
+<img src="images/number_of_users.png">
+
+**Number of Response Time**
+This is the WEB UI chart (1000 user at 1.00 spawn rate)
+<img src="images/response_times.png">
+
+**Total Request per Second**
+This is the WEB UI chart (1000 user at 1.00 spawn rate)
+<img src="images/total_requests_per_second.png">
 
 ## C. Advantages/Disadvantage of Locust
 ### Advantage:
@@ -357,11 +369,6 @@ It is free and open sources.
 ### Disadvantage:
 Locust can be a costly mistake if done haphazardly, leading to inaccurate results and conclusions. Need Python programming 
 knowledge to perform the test (must be very fimilar with Python to design complicated test case)
-
-
-## D. Applications:
-Performance testing should be performed for any kind of applications since we all want to know how our application is performed. 
-We can guarantee the software applications can handle and manage the workload efficiently
 
 ## E. Reference:
 
