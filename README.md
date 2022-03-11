@@ -78,12 +78,13 @@ Selecting the most appropriate cloud from many cloud offerings is a non-trivial 
 two clouds is a complex, time-consuming and error-prone task. Finally, communication, coordination, synchronization, monitoring and complete management challenges; lastly, the dynamic
 nature of the cloud introduces extra complexity
 
-## Testing website (blog) using Locust IO:
+## 4. Use Case: Testing Website (Blog) using Locust IO:
 
-### Gather Requirement:
+### Requirement Analyst:
 Application name is Blog-Template, and it was designed using Flask Framework, and Jinja Template (Python). It's also using PostgreSQl for database.
 This is a fully functional, and extendable. Code review was conduct by Truc Huynh. Technology that implement in the code: 
-Flask framework, Jinja template, Object-Oriented Programming, SQL Alchemy, Password Hashing (werkzeug.security), Bootstrap, CK Editor (user input)
+Flask framework, Jinja template, Object-Oriented Programming, SQL Alchemy, Password Hashing (werkzeug.security), Bootstrap, CK Editor (user input),
+HTML, CSS, JavaScript...
 
 Blog-Template was original designed by Dr. Angela Yu and implemented by Truc Huynh. 
 Application is a blog that required user register to edit or comment on a post. 
@@ -93,7 +94,11 @@ The Blog-Template was designed as a template blog and post on GitHub by Truc Huy
 Anyone can use the blog for any purpose. The first user will be automatically set as the admin (CRUD operations)
 
 ### Structure of Backend:
-**main.py**
+**main.py** is the python script that contain all component that required to run the application (Blog Template).
+The "main.py" consists all required package (Python library) and the route for the front-end. The front-end was built with
+HTML, CSS, and Bootstrap, and store in templates folder (about.html, contact.html, footer.html, header.html, index.html, 
+login.html, make-post.html, post.html, register.html). The static folder contain all the .css files, 
+
 ```python
 from flask import Flask, render_template, redirect, url_for, flash, abort
 from flask_bootstrap import Bootstrap
