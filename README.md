@@ -42,7 +42,7 @@ existing body of research literature nor an extensive collection of practical or
 to help testers faced with the prospect of doing software performance testing".
 
 ## 3. Performance Testing Tools:
-### Locust IO:
+### a. Locust IO:
 
 Locust is an easy to use, scriptable and scalable performance testing tool. 
 Instead of being constrained by a UI or domain specific language, Locust infinitely expandable and very developer friendly due to its code base tools.
@@ -61,7 +61,7 @@ Running in Docker, distributed load generation, running test in a debugger, runn
 , retrieved test statistics in CSV format, testing non-HTTP systems, testing request base SDKs, increase performance with a faster HTTP client, event hooks,
 logging, using locust as a library.
 
-### Expertus:
+### b. Expertus:
 
 Retrieved from [4], Expertus is designed to automate large scale distributed experiment studies in IaaS clouds with the goal of addressing three challenges:
 
@@ -80,7 +80,9 @@ nature of the cloud introduces extra complexity
 
 ## 4. Use Case: Testing Website (Blog) using Locust IO:
 
-### Requirement Analyst:
+In this experiment, I will also perform performance testings (automated test) on a working websites that was designed by Dr. Angela Yu, and implement by myself.
+
+### a. Requirement Analyst:
 Application name is Blog-Template, and it was designed using Flask Framework, and Jinja Template (Python). It's also using PostgreSQl for database.
 This is a fully functional, and extendable. Code review was conduct by Truc Huynh. Technology that implement in the code: 
 Flask framework, Jinja template, Object-Oriented Programming, SQL Alchemy, Password Hashing (werkzeug.security), Bootstrap, CK Editor (user input),
@@ -97,7 +99,11 @@ Anyone can use the blog for any purpose. The first user will be automatically se
 **main.py** is the python script that contain all component that required to run the application (Blog Template).
 The "main.py" consists all required package (Python library) and the route for the front-end. The front-end was built with
 HTML, CSS, and Bootstrap, and store in templates folder (about.html, contact.html, footer.html, header.html, index.html, 
-login.html, make-post.html, post.html, register.html). The static folder contain all the .css files, 
+login.html, make-post.html, post.html, register.html). The static folder contain all the .css files, images, javascript.
+
+The package(folders contain main.py and all the necessary file) then push through GitHub and deploy to Heroku from GitHub.
+Therefore, every time I make change, application will automatically change. I also schedule automatic testings (mostly functional testing and GUI testing)
+for the app everytime I make change (just to make sure nothing will break when I make a new commit). 
 
 ```python
 from flask import Flask, render_template, redirect, url_for, flash, abort
@@ -225,7 +231,9 @@ if __name__ == "__main__":
 
 <img src="images/test-suite.PNG" height="450px" width="250">
 
-
+- Test plan:
+My test script is simple as login a user, visit the contact 
+I will run automated test start at 1000 users at a spawn
 
 
 
