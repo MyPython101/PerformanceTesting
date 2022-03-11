@@ -306,9 +306,9 @@ Something like this
 ```bash
 python3 schedule-script.py
 ```
-Schedule script(schedule-script.py) can be used to scan and detect change in code, then run performance test if needed.
+Schedule script (schedule-script.py) can be used to scan and detect change in code, then run performance test if needed.
 
-### e. Result
+### e. Test Result:
 
 Result for the first test case 1000 user at 1.00 spawn rate. The result return with 0% fail rate. 
 Testers can download the PDF, CVS version for data analysis. Web UI can also be use for monitoring with real time monitoring and interactive chart.
@@ -361,12 +361,12 @@ This is the WEB UI chart (1000 user at 1.00 spawn rate)
 This is the WEB UI chart (1000 user at 1.00 spawn rate)
 <img src="images/total_requests_per_second.png">
 
-## C. Advantages/Disadvantage of Locust
-### Advantage:
+## 5. Advantages/Disadvantage of Locust
+### a. Advantage:
 Verifies the speed, accuracy, and stability of the software match expectation. Assists the system by authenticating the responsiveness and managing the scalability and reliability of software features.
 It is free and open sources. 
 
-### Disadvantage:
+### b. Disadvantage:
 Locust can be a costly mistake if done haphazardly, leading to inaccurate results and conclusions. Need Python programming 
 knowledge to perform the test (must be very fimilar with Python to design complicated test case)
 
