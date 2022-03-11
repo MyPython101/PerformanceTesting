@@ -106,6 +106,7 @@ The package(folders contain main.py and all the necessary file) then push throug
 Therefore, every time I make change, application will automatically change. I also schedule automatic testings (mostly functional testing and GUI testing)
 for the app everytime I make change (just to make sure nothing will break when I make a new commit). 
 
+PyCharm IDE was used to develop this code but user can use any IDE to navigate the code.
 ```python
 from flask import Flask, render_template, redirect, url_for, flash, abort
 from flask_bootstrap import Bootstrap
@@ -244,12 +245,18 @@ There are 2 script that I need to design: the performance test script and the sc
 
 ### d. Test Suite Implementation:
 
+**Plan:**
+Run the test script (or use another script to schedule the test script). The schedule script should be able to increase the amount of user
+after each successful test. The process is described below
+
 <img src="images/test-suite-implement.PNG" height="450px" width="350px">
 
 **Test Script:**
 Set the wait time for each user from 1 to 300 second so that each user will be able to navigate and read 1 post or do some comment.
-Task number 1 is to navigate to contact page (and stay there for 40 second). After 50 second navigate to the post 1
+Task number 1 is to navigate to contact page (and stay there for 40 second). After 50 second navigate to the post 1. 
+PyCharm IDE is used to run the code.
 
+This is the content of the test script (locust_test.py)
 ```python
 from locust import HttpUser, task, between
 
@@ -275,9 +282,29 @@ class TestCases(HttpUser):
         self.client.get("/post/1")
 ```
 
+**Execute:**
+
+Run this script within the Terminal of PyCharm IDE
+```bash
+locust -f locust_test.py
+```
+Then go to "http://localhost:8089/" for monitoring. This is how it looks like
+
+<img src="images/locust-io-web.png">
+
+**Automation Testing:**
+
+For automation testing without the WEB UI, run this script below instead. 
+```bash
+locust -f locust_test.py -u 1000 -r 100 --run-time 1h30m --stop-timeout 99
+```
+To schedule a full test suite, we need to write another Python script that increment the users as our test plan and simple schedule it.
+Depend on the application report on peak time (e.g. 2 millions people operate at the same time). Tester can simply set the user to that peak,
+and schedule the performance test when they have a change in the system (or just for regular maintainable).
+
 ### e. Result
 
-Result for the first test case 1000 user at 1.00 spawn rate
+Result for the first test case 1000 user at 1.00 spawn rate. This is printed within my IDE (Py Charm). The result return with 0% fail rate.
 ```bash
 2022-03-10T17:00:41Z
 [2022-03-10 12:00:41,483] DESKTOP-J4K30PB/INFO/locust.main: Shutting down (exit code 1)
@@ -308,8 +335,9 @@ Response time percentiles (approximated)
  GET      //post/1                                                                               69    170    170    170    180    190    190    190    190    190    190     18
 --------|--------------------------------------------------------------------------------|---------|------|------|------|------|------|------|------|------|------|------|------|
  None     Aggregated                                                                            150    170    170    170    180    180    190    190    190    190    190     29
-
 ```
+
+
 
 ## C. Advantages/Disadvantage
 ### Advantage:
@@ -338,4 +366,4 @@ Tutorial Points (n.d.), "Performance Testing", Retrieved from https://www.tutori
  
 Bystron. C.,  Heyman. J., Hamren J., Heyman. H. and Holmberg. L., Locust, Retrieved from https://github.com/locustio/locust [5]
 
-Retrieved from http://docs.locust.io/en/stable/running-without-web-ui.html#
+Retrieved from http://docs.locust.io/en/stable/running-without-web-ui.html# [6]
