@@ -244,9 +244,16 @@ There are 2 script that I need to design: the performance test script and the sc
 
 ### d. Test Suite Implementation:
 
-<img src="images/test-suite.PNG" height="450px" width="250px">
+<img src="images/test-suite-implement.PNG" height="450px" width="350px">
 
-### e. 
+**Test Script:**
+```python
+
+```
+
+### e. Result
+
+Result for the first test case 1000 user at 1.00 spawn rate
 ```bash
 2022-03-10T17:00:41Z
 [2022-03-10 12:00:41,483] DESKTOP-J4K30PB/INFO/locust.main: Shutting down (exit code 1)
