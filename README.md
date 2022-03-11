@@ -84,18 +84,19 @@ In this experiment, I will also perform performance testings (automated test) on
 
 ### a. Requirement Analyst:
 Application name is Blog-Template, and it was designed using Flask Framework, and Jinja Template (Python). It's also using PostgreSQl for database.
-This is a fully functional, and extendable. Code review was conduct by Truc Huynh. Technology that implement in the code: 
+The database schema is used primary to store blog contents and user information.
+This website is fully functional and extendable. Code review was conduct by Truc Huynh. Technologies which are implemented in the application: 
 Flask framework, Jinja template, Object-Oriented Programming, SQL Alchemy, Password Hashing (werkzeug.security), Bootstrap, CK Editor (user input),
 HTML, CSS, JavaScript...
 
 Blog-Template was original designed by Dr. Angela Yu and implemented by Truc Huynh. 
-Application is a blog that required user register to edit or comment on a post. 
+Application is a blog template that allow registered user to edit or comment on a post. 
 Only the admin can create , edit or delete post. Application was host at heroku.com, and the hyperlink is "https://template-blog.herokuapp.com/".
 
 The Blog-Template was designed as a template blog and post on GitHub by Truc Huynh ("https://github.com/jackyhuynh/blog-template").
-Anyone can use the blog for any purpose. The first user will be automatically set as the admin (CRUD operations)
+Anyone can use the blog for any purpose. The first user will be automatically set as the admin.
 
-### Structure of Backend:
+### b. Structure of Backend:
 **main.py** is the python script that contain all component that required to run the application (Blog Template).
 The "main.py" consists all required package (Python library) and the route for the front-end. The front-end was built with
 HTML, CSS, and Bootstrap, and store in templates folder (about.html, contact.html, footer.html, header.html, index.html, 
@@ -227,17 +228,25 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-### Test Plan Design:
+### c. Test Plan Design:
 
-<img src="images/test-suite.PNG" height="450px" width="250">
+<img src="images/test-suite.PNG" height="450px" width="250px">
 
-- Test plan:
-My test script is simple as login a user, visit the contact 
-I will run automated test start at 1000 users at a spawn
+**Test plan:** After analyzing Blog-Template Source Code and requirements, I design my test plan.
+My plan is simple increase the number of users over time and stop at 3 millions users. 
+I will only perform 3 tasks on the websites: login, visit contact page, and visit post number 1. 
+Even though, Locust IO allow me with much more tests such as create a tasks, edit, or delete it; create new users; import new
+documentation into user post... However, I just want to keep my tasks simple for this use case.
+
+I will run automated test start at 1000 users at a spawn 1.00 second then I will increase by 1000 for each test case.
+There are 2 script that I need to design: the performance test script and the schedule test script.
 
 
+### d. Test Suite Implementation:
 
-### 
+<img src="images/test-suite.PNG" height="450px" width="250px">
+
+### e. 
 ```bash
 2022-03-10T17:00:41Z
 [2022-03-10 12:00:41,483] DESKTOP-J4K30PB/INFO/locust.main: Shutting down (exit code 1)
