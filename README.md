@@ -223,7 +223,7 @@ if __name__ == "__main__":
 
 ### Test Plan Design:
 
-<img src="images/test-suite.PNG">
+<img src="images/test-suite.PNG" height="450px" width="250">
 
 
 
