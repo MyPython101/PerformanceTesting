@@ -302,9 +302,19 @@ To schedule a full test suite, we need to write another Python script that incre
 Depend on the application report on peak time (e.g. 2 millions people operate at the same time). Tester can simply set the user to that peak,
 and schedule the performance test when they have a change in the system (or just for regular maintainable).
 
+Something like this
+```bash
+python3 schedule-script.py
+```
+Schedule script(schedule-script.py) can be used to scan and detect change in code, then run performance test if needed.
+
 ### e. Result
 
-Result for the first test case 1000 user at 1.00 spawn rate. This is printed within my IDE (Py Charm). The result return with 0% fail rate.
+Result for the first test case 1000 user at 1.00 spawn rate. This is printed within my IDE (Py Charm). The result return with 0% fail rate. 
+Testers can download the PDF, CVS version for data analysis
+
+In my latest run, Template-Blog was able to handle 20,000 users at 0.5 spawn rate.
+
 ```bash
 2022-03-10T17:00:41Z
 [2022-03-10 12:00:41,483] DESKTOP-J4K30PB/INFO/locust.main: Shutting down (exit code 1)
@@ -337,21 +347,20 @@ Response time percentiles (approximated)
  None     Aggregated                                                                            150    170    170    170    180    180    190    190    190    190    190     29
 ```
 
+****
 
-
-## C. Advantages/Disadvantage
+## C. Advantages/Disadvantage of Locust
 ### Advantage:
-- Verifies the speed, accuracy, and stability of the software match expectation.
-- Assists the system by authenticating the responsiveness and managing the scalability and reliability of software features.
-- Retrieved from (14)
+Verifies the speed, accuracy, and stability of the software match expectation. Assists the system by authenticating the responsiveness and managing the scalability and reliability of software features.
+It is free and open sources. 
 
 ### Disadvantage:
-- Can be a costly mistake if done haphazardly, leading to inaccurate results and conclusions.
-- Carried out on multiple devices in different locations to check whether a user faces difficulties. Hence, this testing can be costly.
-- Retrieved from (14)
+Locust can be a costly mistake if done haphazardly, leading to inaccurate results and conclusions. Need Python programming 
+knowledge to perform the test (must be very fimilar with Python to design complicated test case)
+
 
 ## D. Applications:
-- Performance testing should be performed for any kind of applications since we all want to know how our application is performed. 
+Performance testing should be performed for any kind of applications since we all want to know how our application is performed. 
 We can guarantee the software applications can handle and manage the workload efficiently
 
 ## E. Reference:
