@@ -9,11 +9,7 @@ locustio to perform performance testing on a blog website is presented
 
 ### a. Performance Testing Definition:
 
-Performance testing is a testing technique, performed to determine the responsiveness and stability of 
-a software system under various workload.
-Performance testing metrics are scalability, reliability, resource usage. 
-There are four primary type of performance testing: Load Testing, Stress Testing, Soak Testing, and Spike Testing. 
-Performance testing is a non-functional testing [3].
+Performance testing is a testing technique, performed to determine the responsiveness and stability of a software system under the various workload. Performance testing metrics are scalability, reliability, resource usage. There are four primary types of performance testing: Load Testing, Stress Testing, Soak Testing, and Spike Testing. Performance testing is non-functional testing [3].
 
 ### b. System Performance Degradation:
 
