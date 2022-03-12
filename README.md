@@ -13,9 +13,7 @@ Performance testing is a testing technique, performed to determine the responsiv
 
 ### b. System Performance Degradation:
 
-According to [1], system performance degradation or problems handling required system
-throughput is an extremely significant issue for many large industrial projects. Although the software system has gone through
-extensive functionality testing, it was never really tested to assess its expected performance [1].
+According to [1], system performance degradation or problems handling required system throughput is an extremely significant issue for many large industrial projects. Although the software system has undergone extensive functionality testing, it was never tested to assess its expected performance [1].
 
 During an architecture review at AT&T, a group of engineer have found that "performance issues
 account for one of the three major fault categories. Performance problems identified might include
